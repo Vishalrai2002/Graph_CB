@@ -18,7 +18,8 @@ class graph {
 
 public:
 	
-	graph(int V, bool isDirected=false) {
+	graph(int V, bool isDirected=false) {  // if isDirected is false toh main undirected graph bana raha hu
+		                              // if isDirected is true then i make directed graph 
 		this->V = V;
 		ptr = new list<int>[V]; // Created a dynamic array of V size
 		this->isDirected = isDirected;
@@ -26,7 +27,7 @@ public:
 
 	void addEdge(int u, int v) {
 		ptr[u].push_back(v); // u pe jao aur v ko push kr do
-		if(!isDirected) {
+		if(!isDirected) { // agar graph undirected hai toh then do below code
 			ptr[v].push_back(u); // v pe jao aur u ko push kr do
 		}
 	}
