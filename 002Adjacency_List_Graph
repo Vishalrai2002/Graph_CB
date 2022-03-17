@@ -19,13 +19,14 @@ class graph {
 
 	public :
 
-		graph(bool isDirected=false) {
+		graph(bool isDirected=false) { // if isDirected is false toh main undirected graph bana raha hu
+		                              // if isDirected is true then i make directed graph 
 			this->isDirected = isDirected;
 		}
 
 		void addEdge(T u, T v) {
 			neighbourMap[u].push_back(v);
-			if(!isDirected) {
+			if(!isDirected) { // agar graph undirected hai toh then do below code
 				neighbourMap[v].push_back(u);
 			}
 		}
